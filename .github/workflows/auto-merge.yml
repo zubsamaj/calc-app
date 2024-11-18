@@ -8,15 +8,19 @@ jobs:
   assign-and-merge:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Assign to Code Rabbit
-      - name: Assign to Code Rabbit
-        uses: actions-ecosystem/action-assign@v1
+      # Step 1: Assign the PR to Code Rabbit
+      - name: Assign Pull Request
+        uses: kentaro-m/auto-assign-action@v1
         with:
-          assignees: 'coderabbitai' # Replace with the actual GitHub username
+          add-assignees: true
+          add-reviewers: false
+          assignees: 'coderabbitai' # Replace with the bot's actual username
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Step 2: Auto-Merge if Conditions are Met
-      - name: Auto-Merge PR
-        uses: "peter-evans/enable-pull-request-automerge@v2"
+      # Step 2: Auto-Merge the PR if conditions are met
+      - name: Enable Auto-Merge
+        uses: peter-evans/enable-pull-request-automerge@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          merge-method: "squash" # or "merge" or "rebase"
+          merge-method: squash # Can also be 'merge' or 'rebase'
