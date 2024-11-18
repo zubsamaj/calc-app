@@ -1,0 +1,22 @@
+name: Auto Assign and Merge
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  assign-and-merge:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Assign to Code Rabbit
+      - name: Assign to Code Rabbit
+        uses: actions-ecosystem/action-assign@v1
+        with:
+          assignees: 'coderabbitai' # Replace with the actual GitHub username
+
+      # Step 2: Auto-Merge if Conditions are Met
+      - name: Auto-Merge PR
+        uses: "peter-evans/enable-pull-request-automerge@v2"
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          merge-method: "squash" # or "merge" or "rebase"
