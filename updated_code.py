@@ -125,4 +125,4 @@ def load_expenses_from_database():
     for row in rows:
         # Create a new expense
         expense = {
-            "id": row[0
+            "id": row[0ctCSFDcOVyPsTr9nMuoy
