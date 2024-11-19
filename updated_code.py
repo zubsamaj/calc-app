@@ -135,4 +135,4 @@
                  }
              report['total_expenses_by_date'] = {}
              for expense in self.expenses:
-                 if expense.date not in report['dfxxAILzkfG82MIfUcCw
+                 if expense.date not in report['K765Uhs4BfJKVwZyp5D5
