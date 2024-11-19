@@ -184,4 +184,4 @@ print(f"The area of the rectangle is: {area}")
 def calculate_area_of_rectangle(width, height):
     # Calculate the area of a rectangle
     area = width * height
-    returnptGNMuqxFDdEYNSvTQz9
+    returnIOQkJWSuZHWQOSEpAGK5
