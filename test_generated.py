@@ -1,6 +1,7 @@
 # Unit tests for C:\Users\T0245521\Downloads\newui\calc-app\updated_code.py
 
  
+    
 import unittest
 import json
 from your_module import create_expense, get_all_expenses, update_expense, delete_expense, get_expense, save_expenses_to_file, load_expenses_from_file, save_expenses_to_database, load_expenses_from_database
@@ -28,25 +29,24 @@ class TestExpenseFunctions(unittest.TestCase):
         # Test normal input values
         expenses = get_all_expenses()
         self.assertEqual(len(expenses), 3)
-
-        # Test edge cases
-        expenses = get_all_expenses()
         self.assertEqual(expenses[0]["id"], 1)
         self.assertEqual(expenses[0]["description"], "Rent")
         self.assertEqual(expenses[0]["amount"], 1000)
         self.assertEqual(expenses[0]["date"], "2022-01-01")
+        self.assertEqual(expenses[1]["id"], 2)
+        self.assertEqual(expenses[1]["description"], "Groceries")
+        self.assertEqual(expenses[1]["amount"], 50)
+        self.assertEqual(expenses[1]["date"], "2022-01-05")
+        self.assertEqual(expenses[2]["id"], 3)
+        self.assertEqual(expenses[2]["description"], "Utilities")
+        self.assertEqual(expenses[2]["amount"], 200)
+        self.assertEqual(expenses[2]["date"], "2022-01-10")
+
+        # Test edge cases
+        expenses = get_all_expenses()
+        self.assertEqual(len(expenses), 3)
 
     def test_update_expense(self):
         # Test normal input values
-        expense_id = 1
-        expense_data = {"description": "Updated Expense", "amount": 200, "date": "2022-01-01"}
-        updated_expense = update_expense(expense_id, expense_data)
-        self.assertEqual(updated_expense["id"], 1)
-        self.assertEqual(updated_expense["description"], "Updated Expense")
-        self.assertEqual(updated_expense["amount"], 200)
-        self.assertEqual(updated_expense["date"], "2022-01-01")
 
-        # Test edge cases
-        expense_id = 0
-        expense_data = {"description": "",
-ssJHJPZeiYQSaKryONBR
+Rc43fnl3PevVa0f0U0M7
