@@ -49,4 +49,4 @@ class TestExpenseFunctions(unittest.TestCase):
         # Test edge cases
         expense_id = 0
         expense_data = {"description": "",
-BFk5U4CErtfBr5JcgMWM
+ssJHJPZeiYQSaKryONBR
