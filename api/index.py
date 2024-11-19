@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
 
-auth_token = 'gggfgfyytttyytfgtytr54454555'
-
 app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
